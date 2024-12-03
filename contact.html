@@ -3,40 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เทคโนโลยีเว็บสมัยใหม่ - หน้าหลัก</title>
-    <meta name="description" content="บทความเกี่ยวกับเทคโนโลยีเว็บสมัยใหม่">
+    <title>ติดต่อเรา - เทคโนโลยีเว็บสมัยใหม่</title>
 </head>
 <body>
     <header role="banner">
-        <h1>เทคโนโลยีเว็บสมัยใหม่</h1>
+        <h1>ติดต่อเรา</h1>
         <nav role="navigation" aria-label="เมนูหลัก">
             <ul>
-                <li><a href="index.html" aria-current="page">หน้าหลัก</a></li>
-                <li><a href="contact.html">ติดต่อเรา</a></li>
+            <li><a href="index.html" aria-current="page">หน้าหลัก</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
             </ul>
-        </nav>
+            </nav>
     </header>
 
     <main role="main">
-        <article>
-            <header>
-                <h2>การพัฒนาเว็บในยุค 2024</h2>
-                <p>เผยแพร่: <time datetime="2024-02-20">20 กุมภาพันธ์ 2567</time></p>
-            </header>
-            <section>
-                <h3>เทคโนโลยีที่น่าจับตามอง</h3>
-                <p>ในปี 2024 เทคโนโลยีเว็บมีการพัฒนาไปอย่างรวดเร็ว</p>
-            </section>
-        </article>
-    </main>
+        <section>
+            <h2>ส่งข้อความถึงเรา</h2>
+            <!-- ฟอร์มพร้อม ARIA Labels -->
+            <form action="/submit" method="POST" role="form" aria-label="แบบฟอร์มติดต่อ">
+                <div class="form-group">
+                    <label for="fullname">ชื่อ-นามสกุล *</label>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        required
+                        aria-required="true"
+                        minlength="2"
+                        maxlength="100"
+                        aria-describedby="fullname-help">
+                    <small id="fullname-help">กรุณากรอกชื่อและนามสกุลจริง</small>
+                </div>
 
-    <aside role="complementary">
-        <h3>บทความที่เกี่ยวข้อง</h3>
-        <ul>
-            <li><a href="#">การพัฒนาเว็บแบบ Responsive</a></li>
-            <li><a href="#">เทคนิคการทํา SEO</a></li>
-        </ul>
-    </aside>
+                <div class="form-group">
+                    <label for="email">อีเมล *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        aria-required="true"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        aria-describedby="email-help">
+                    <small id="email-help">ตัวอย่าง: example@domain.com</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">เบอร์โทรศัพท์</label>
+                    <input
+                        type="tel"
+                        id="tel"
+                        name="tel"
+                        pattern="[0-9]{10}"
+                        aria-describedby="tel-help">
+                    <small id="tel-help">กรอกหมายเลข 10 หลัก ไม่ต้องมีขีด เช่น 0812345678</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">ข้อความ *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        aria-required="true"
+                        minlength="10"
+                        rows="5"
+                        aria-describedby="message-help"></textarea>
+                    <small id="message-help">กรุณากรอกข้อความอย่างน้อย 10 ตัวอักษร</small>
+                </div>
+
+                <div class="form-group">
+                    <button
+                        type="submit"
+                        aria-label="ส่งข้อความ">
+                        ส่งข้อความ
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
 
     <footer role="contentinfo">
         <p>&copy; 2024 เว็บเทคโนโลยี. สงวนลิขสิทธิ์.</p>
